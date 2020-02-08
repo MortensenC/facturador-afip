@@ -1,0 +1,25 @@
+{
+  "name": "facturador-afip",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/app.js",
+  "scripts": {
+    "test": "test",
+    "start-dev": "nodemon --config \"./util/nodemon.json\"/",
+    "build": "rm -rf ./build/ && tsc",
+    "start": "node build/app.js"
+  },
+  "author": "Mortensen Cristian",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.2",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.0",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.6.2",
+    "tslint": "^6.0.0",
+    "typescript": "^3.7.5"
+  }
+}
