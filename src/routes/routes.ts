@@ -39,7 +39,7 @@ export const loadRoutes = (app: express.Application) => {
     // });
 
     generarPDF();
-
+    
     res.json("Ok");
   });
 

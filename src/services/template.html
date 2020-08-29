@@ -1,47 +1,10 @@
-import pdf from "html-pdf";
-
-function getHtmlHeader() { 
-    return ``;
-}
-function getHtmlFooter() { 
-    return ``;
-}
-export function generarPDF() {
-         var options: pdf.CreateOptions = {
-           format: 'A4',
-
-           paginationOffset: 1,
-           // Zooming option, can be used to scale images if `options.type` is not pdf
-           zoomFactor: "1", // default is 1
-
-           // File options
-           type: "pdf",             // allowed file types: png, jpeg, pdf
-           quality: "75",           // only used for types png & jpeg
-          //  header: {
-          //    height: "45mm",
-          //    contents: getHtmlHeader(),
-          //  },
-          //  footer: {
-          //    height: "28mm",
-          //    contents: {
-          //      first: "Cover page",
-          //      2: "Second page", // Any page number is working. 1-based index
-          //      default: getHtmlFooter(),
-          //      last: "Last Page"
-          //    }
-          //  }
-         };
-
-         var html = `
-         <!doctype html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>PDF Result Template</title>
     <style>
-      *{
-        box-sizing:border-box;
-      }
+      *{box-sizing:border-box}
       .bold{
         font-weight:700;
       }
@@ -51,14 +14,13 @@ export function generarPDF() {
         font-weight:700;
       }
       .container{
-        width:595px;
-        height:842px;
+        width:992px;
+        height:1404px;
         margin:10px auto;
         font-family:sans-serif;
-        font-size: 12px;
       }
       .header{
-        font-size:14px;
+        font-size:23px;
         padding:5px;
         text-align:center;
         font-weight:700;
@@ -72,7 +34,7 @@ export function generarPDF() {
         border-right:1px solid #000;
       }
       .names .title{
-        font-size:20px;
+        font-size:30px;
         font-weight:700;
         text-transform:uppercase;
         width:calc(50% - 40px);
@@ -81,25 +43,25 @@ export function generarPDF() {
         text-align:center;
       }
       .names .title.factura{
-        padding-left:20px;
+        padding-left:30px;
       }
       .names .type-container{
         display:flex;
         flex-direction:column;
         justify-content:center;
-        width:40px;
-        height:50px;
+        width:80px;
+        height:80px;
         border:1px solid #000;
         border-top:none;
       }
       .names .type-container .type{
-        font-size:30px;
+        font-size:40px;
         text-transform:uppercase;
         text-align:center;
         font-weight:700;
       }
       .names .type-container .code{
-        font-size:8px;
+        font-size:14px;
         text-transform:uppercase;
         text-align:center;
       }
@@ -348,14 +310,3 @@ export function generarPDF() {
     </div>
   </body>
 </html>
-    `;
-
-         pdf.create(html, options).toFile("./tmp/factura.pdf", function(err, res) {
-           if (err) {
-             console.log(err);
-           } else {
-             console.log(res);
-           }
-         });
-       }
-;
