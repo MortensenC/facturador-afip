@@ -18,7 +18,7 @@
   "dependencies": {
     "@afipsdk/afip.js": "^0.6.3",
     "@types/express": "^4.17.2",
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "@types/node": "^13.7.0",
